@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<div id="kk">
+			输入信息{{xinxi}}
+			<input v-model="xinxi" />
+		</div>
+		
+		
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			let v=new Vue({
+				el:'#kk',
+				data:{
+					xinxi:''
+				}
+			})
+		</script>
+	</body>
+</html>
