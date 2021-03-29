@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="month">
+			请输入月份：<input type="text" v-model="days" name="" id="" value="" />
+			<li v-if="days==1 || days==3 || days==5 || days==7 || days==9 ">这个月有31天</li>
+			<li v-if="days==2">这个月是闰月有28天</li>
+			<li v-if="days==4 || days==6 || days==8 || days==10 ">这个月有30天</li>
+		</div>
+		
+		<script type="text/javascript">
+		let v=new Vue({
+			el:'#month',
+			data:{
+				days:''
+			}
+		})	
+		</script>
+		
+	</body>
+</html>
