@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input v-model="country" type="text" name="" id="" value="" />
+				<div v-for="country1 in countrys">
+				<div v-if="country==country1.id">
+				你输入的国家是{{country1.name}}，首都是{{country1.c}}
+				<!--{{student[0].name}}-->
+				</div>
+				</div>
+		</div>
+		<script type="text/javascript">
+			let v = new Vue({
+				el: '#app',
+				data: {
+					country: '1',
+					countrys: [{
+							id: '1',
+							name: '中国',
+							c: '北京'
+						},
+						{
+							id: '2',
+							name: '美国',
+							c: '华盛顿'
+						},
+						{
+							id: '3',
+							name: '法国',
+							c: '巴黎'
+						},
+						{
+							id: '4',
+							name: '泰国',
+							c: '曼谷'
+						},
+						{
+							id: '5',
+							name: '日本',
+							c: '东京'
+						}
+					]
+				}
+			})
+		</script>
+
+	</body>
+</html>
