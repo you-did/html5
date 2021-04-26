@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<div>得分：{{getnumber}}</div>
+			点击次数：{{number}}
+			<div><img src="img/zc1.jpeg" style="margin:350px" @click="show()"/><br></div>			
+		</div>
+		
+		<script type="text/javascript">
+			let v=new Vue({
+				el:'#app',
+				data:{
+					number:0,
+					getnumber:0
+				},
+				methods:{
+					show(e){
+						console.log(event.clientX+","+event.clientY)
+						v.number++;
+						if(event.clientX>=471 && event.clientX<=487 && event.clientY>=559 && event.clientY<=583){
+							alert("恭喜你找到啦！");
+							v.getnumber=v.getnumber+10;
+						}else if(event.clientX>=976 && event.clientX<=990 && event.clientY>=439 && event.clientY<=470){
+							alert("恭喜你找到啦！");
+							v.getnumber=v.getnumber+10;
+						}else if(event.clientX>=970 && event.clientX<=992 && event.clientY>=599 && event.clientY<=647){
+							alert("恭喜你找到啦！");
+							v.getnumber=v.getnumber+10;
+						}else{
+							alert("不是这里哦！！！");
+						}
+						if(v.getnumber==30){
+							alert("都找出来了呢！游戏通过啦！");
+						}
+						
+						if(v.number>10){
+							alert("点击数量超过十次游戏结束！");
+						}
+					}
+				}
+				
+			})
+			
+		</script>
+		
+		
+	</body>
+</html>
