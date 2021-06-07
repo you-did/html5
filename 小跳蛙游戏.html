@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<canvas id="myCanvas" height="600" width="900"></canvas>
+		<div id="app">
+			<input type="text" @click="show()" @keyup.enter="show()" v-model="enterkey"/>
+			
+		</div>
+
+		<script type="text/javascript">
+			let v = new Vue({
+				el: "#app",
+				data: {
+					enterkey: ""
+				},
+				methods: {
+					show() {
+						console.log(this.enterkey);
+						// 加载背景
+						let canvas = document.getElementById("myCanvas");
+						let context = canvas.getContext("2d");
+						let img_background = new Image();
+						img_background.src = "../imgs/青蛙过河.jpeg";
+						img_background.onload=function(){
+						context.drawImage(img_background, 0, 0, 630, 489);
+						}
+						
+						//显示青蛙
+						console.log(event.clientX+","+event.clientY)
+						let img_wawa = new Image();
+						img_wawa.src = "../imgs/抠图蛙蛙.png";
+						img_wawa.onload=function(){
+							context.drawImage(img_wawa,300,385,100,100)
+						}
+						
+						//判断
+						if(this.enterkey == "Australla"){
+							this.enterkey="";
+							img_wawa.onload=function(){
+								context.drawImage(img_wawa,340,300,100,100)
+							}
+						}else if(this.enterkey=="go ahead"){
+							this.enterkey="";
+							img_wawa.onload=function(){
+								context.drawImage(img_wawa,420,220,100,100)
+							}
+						}else if(this.enterkey=="he"){
+							this.enterkey="";
+							img_wawa.onload=function(){
+								context.drawImage(img_wawa,340,140,100,100)
+							}
+						}else if(this.enterkey=="cold"){
+							this.enterkey="";
+							img_wawa.onload=function(){
+								context.drawImage(img_wawa,340,50,100,100)
+							}
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
